@@ -1,0 +1,34 @@
+.header {
+    display: flex;
+    align-items: center;
+    max-height: 45px;
+}
+.header a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+.header .logoGif {
+    max-height: 64px;
+    margin-left: -45px;
+}
+.header .logo {
+    max-height: 35px;
+}
+.mat-toolbar.black {
+    background-color: #191919 !important;
+}
+.header .title-group {
+    padding-left: 25px;
+}
+.header .title-group i{
+    padding-right: 5px;
+}
+
+.header .title {
+    margin-left: 0.5rem;
+}
+
+.header .title-group a {
+    color: #1a1a1a;
+}

@@ -1,0 +1,40 @@
+
+<mat-card>
+    <mat-card-title>Editar Tarefa</mat-card-title>
+    <div class="check">
+        <mat-checkbox [(ngModel)]="task.taskFinalized" class="check">Tarefa Finalizada</mat-checkbox>
+    </div>
+    <form>
+        <mat-grid-list cols="2" rowHeight="2:1">
+            <!-- Number Task -->
+            <mat-form-field class="numberTask line">
+                <input matInput placeholder="Número da tarefa"  [(ngModel)]="task.taskNumber" name="taskNumber">
+            </mat-form-field>
+
+            <!-- Data Creation Task -->
+            <mat-form-field class="data">
+                <mat-label>Data de Criação</mat-label>
+                <input matInput [matDatepicker]="picker" [(ngModel)]="task.taskDateCreation" name="taskDateCreation">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </mat-grid-list>
+        
+
+        <mat-form-field class="line">
+            <input matInput placeholder="Título da tarefa" [(ngModel)]="task.taskName" name="taskName">
+        </mat-form-field>
+        <mat-form-field class="line">
+            <mat-label>Descrição</mat-label>
+            <textarea matInput [(ngModel)]="task.taskDescription" name="taskDescription"></textarea>
+        </mat-form-field>
+    </form>
+</mat-card>
+
+<button class="button" mat-raised-button (click)="updateTask()" color="primary">
+    Atualizar
+</button>
+
+<button class="button" mat-raised-button (click)="cancelTask()" color="warn">
+    Cancelar
+</button>

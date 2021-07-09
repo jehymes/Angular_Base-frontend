@@ -1,0 +1,17 @@
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.button {
+    margin: 1rem;
+}
+
+.numberTask {
+    width: 7rem;
+}
+
+.data {
+    margin: 1rem;
+    width: 8rem;
+}

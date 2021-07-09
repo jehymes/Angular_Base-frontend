@@ -1,0 +1,23 @@
+.no-border {
+    border: 0px;
+    border-radius: 0%;
+}
+
+.card {
+    width: 30rem;
+    height: 20rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.button {
+    margin: 1rem;
+}
+
+.content-text {
+    min-height: 235px;
+    max-height: 235px;
+}

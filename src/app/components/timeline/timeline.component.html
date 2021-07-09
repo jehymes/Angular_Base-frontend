@@ -1,0 +1,29 @@
+<div class="timeline">
+    <div *ngFor="let item of annotations" class="timeline-event">
+        <div class="timeline-point-track-container">
+            <div class="timeline-point" [ngClass]="item.status === 'R' ? 'heighlight' : ''"></div>
+            <div class="timeline-track"></div>
+        </div>
+        <div class="timeline-content">
+            <mat-card class="card mat-elevation-z3">
+                <mat-card-header>
+                  <mat-card-title>{{ item.title }} <span class="timeline-date">{{ item.data | date:'dd/MM/YYYY HH:mm' }}</span>
+                  </mat-card-title>
+                </mat-card-header>
+                <mat-checkbox class="end-button check-resolve" (click)="checkResolve(item)" [checked]="item.resolved">Resolvido</mat-checkbox>
+                <hr style="margin: -0.5rem 0rem 0.8rem 0rem;">
+                <mat-card-content>
+                  <p class="text"> {{item.content}} </p>
+                </mat-card-content>
+                <mat-card-actions class="end-button">
+                  <button mat-icon-button (click)="editItem(item)" class="edit">
+                    <mat-icon class="material-icons" matTooltip="Editar Anotação" matTooltipPosition="above">edit</mat-icon>
+                  </button>
+                  <button mat-icon-button disabled="{{!item.resolved}}" (click)="deleteItem(item)" class="delete">
+                    <mat-icon class="material-icons" matTooltip="Deletar Anotação" matTooltipPosition="above">delete</mat-icon>
+                  </button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>
